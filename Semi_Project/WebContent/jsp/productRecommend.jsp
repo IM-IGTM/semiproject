@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
+<style>
+
 #ttt {
 	float: left;
 	width: 300px;
@@ -18,31 +19,22 @@ text-align: center;
 #p_title {
 	text-align: center;
 }
+#mTbl {
+	margin-left: auto;
+	margin-right: auto;
+}
 </style>
 </head>
 <body>
-	${r}
-	<p>
 	<div id=p_title>
-		<p>상품전체보기
+		<p>추천상품
 	</div>
 
-	<hr>
-	<div id=p_list border="1">
-		total : ${fn:length(coffees)}<br> <a
-			href="ProductPagingController?">상품명</a> <a
-			href="ProductPagingController?">높은가격순</a> <a
-			href="ProductPagingController?">낮은가격순</a>
-
-	</div>
-
-
-
-	<form action="ProductController" method="post"
+		<form action="ProductRecController" method="post"
 		enctype="multipart/form-data">
+		<table id="mTbl" border="1">
 
-
-		<a href="OctionSelect?"no> <c:forEach var="c" items="${coffees}">
+				 <c:forEach var="c" items="${coffees}">
 				<table border="1" id="ttt">
 					<tr >
 						<td id="p_td1"><img src="img/${c.c_img}"
@@ -68,6 +60,7 @@ text-align: center;
 				</table>
 			</c:forEach>
 		</a>
+		</table>
 	</form>
 </body>
 </html>

@@ -103,8 +103,53 @@ public class C {
 			DBManager.close(con, pstmt, null);
 		}
 	}
+
+
+
+
+
+	public static void getRecCoffees(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			con = DBManager.connect();
+
+			String sql = "select c_no, c_title, c_price, c_img, c_explain from coffee where c_price = (select max(c_price) from coffee)";
+			pstmt = con.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			// rs.next()는 데이터가 있으면 참 없으면 거짓
+
+			ArrayList<Coffee> coffees = new ArrayList<Coffee>();
+
+			Coffee c = null;
+			while (rs.next()) {
+
+				// 객체 (한번에 묶어서 처리) - Bean 필요
+				c = new Coffee();
+
+				c.setC_no(rs.getInt("c_no"));
+				c.setC_title(rs.getString("c_title"));
+				c.setC_price(rs.getString("c_price"));
+				c.setC_img(rs.getString("c_img"));
+				c.setC_explain(rs.getString("c_explain"));
+
+				coffees.add(c);
+			}
+
+			request.setAttribute("coffees", coffees);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+
+		}
+
+	}
+		
+	}
 	
-	
-	
-	
-}

@@ -21,5 +21,10 @@ delete coffee where c_no = 1;
 
 select*from coffee;
 
-
+select c_title, c_price, c_img, c_explain
+from coffee
+where c_price = (
+select max(c_price)
+from coffee
+);
 

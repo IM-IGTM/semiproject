@@ -8,7 +8,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-h4 {
+
+#ttt {
+	float: left;
+	width: 300px;
+	margin: 30px;
 	text-align: center;
 }
 
@@ -19,8 +23,8 @@ h4 {
 </style>
 </head>
 <body>
-${r}
-	
+	${r}
+
 	<h4>상품 등록 페이지</h4>
 
 	<form action="ProductRegController" method="post"
