@@ -22,7 +22,7 @@ public class DBManager {
 		Context ctx = new InitialContext();
 		
 		// Connection ´ë¿©¼Ò
-		DataSource ds = (DataSource) ctx.lookup("java:comp/env/yhs");
+		DataSource ds = (DataSource) ctx.lookup("java:comp/env/ish");
 		return ds.getConnection();
 	}
 	

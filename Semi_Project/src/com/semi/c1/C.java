@@ -30,13 +30,13 @@ public class C {
 
 			// rs.next()는 데이터가 있으면 참 없으면 거짓
 
-			ArrayList<Coffee> coffees = new ArrayList<Coffee>();
+			ArrayList<Coffee2> coffees = new ArrayList<Coffee2>();
 
-			Coffee c = null;
+			Coffee2 c = null;
 			while (rs.next()) {
 
 				// 객체 (한번에 묶어서 처리) - Bean 필요
-				c = new Coffee();
+				c = new Coffee2();
 
 				c.setC_no(rs.getInt("c_no"));
 				c.setC_title(rs.getString("c_title"));
@@ -123,13 +123,13 @@ public class C {
 
 			// rs.next()는 데이터가 있으면 참 없으면 거짓
 
-			ArrayList<Coffee> coffees = new ArrayList<Coffee>();
+			ArrayList<Coffee2> coffees = new ArrayList<Coffee2>();
 
-			Coffee c = null;
+			Coffee2 c = null;
 			while (rs.next()) {
 
 				// 객체 (한번에 묶어서 처리) - Bean 필요
-				c = new Coffee();
+				c = new Coffee2();
 
 				c.setC_no(rs.getInt("c_no"));
 				c.setC_title(rs.getString("c_title"));

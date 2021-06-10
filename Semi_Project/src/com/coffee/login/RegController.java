@@ -13,13 +13,15 @@ public class RegController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	
-	
+		request.getRequestDispatcher("jsp/reg_hs.jsp").forward(request, response);
+		
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	LoginDAO.reg(request);
-	request.getRequestDispatcher("regOutput.jsp").forward(request, response);
+	request.getRequestDispatcher("jsp/regOutput_hs.jsp").forward(request, response);
 	
 	
 	}

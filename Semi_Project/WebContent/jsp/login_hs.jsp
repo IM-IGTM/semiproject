@@ -8,7 +8,7 @@
 </head>
 <body>
 ${result }
-${sessionScope.user.l_id}
-${sessionScope.user.l_pw}
+${sessionScope.member.m_regID}
+${sessionScope.member.m_regPW}
 </body>
 </html>

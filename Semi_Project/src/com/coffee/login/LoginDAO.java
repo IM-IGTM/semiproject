@@ -22,8 +22,7 @@ public class LoginDAO {
 		String userPW = request.getParameter("pw");
 
 		try {
-			String sql = "select * from login_test where l_id = ?";
-//			String sql = "select l_id, l_pw from login_test, regMember where l_id = m_regID and l_pw= m_regPW";
+			String sql = "select * from regMember where m_regID = ?";
 
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -32,20 +31,19 @@ public class LoginDAO {
 
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				String dbID = rs.getString("l_id");
-				String dbPW = rs.getString("l_pw");
+				String dbID = rs.getString("m_regID");
+				String dbPW = rs.getString("m_regPW");
 				System.out.println(dbID);
 				if (userPW.equals(dbPW)) {
-					User u = new User();
-					u.setL_id(dbID);
-					u.setL_name(rs.getString("l_name"));
-					u.setL_pw(dbPW);
+					Member m = new Member();
+					m.setM_regID((dbID));
+					m.setM_regPW((dbPW));
 					request.setAttribute("result", "로그인 성공!");
 
 					HttpSession hs = request.getSession();
 					hs.setMaxInactiveInterval(5);
 
-					hs.setAttribute("user", u);
+					hs.setAttribute("member", m);
 
 				} else {
 					request.setAttribute("result", "비밀번호 오류!");

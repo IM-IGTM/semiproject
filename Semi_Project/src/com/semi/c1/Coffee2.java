@@ -1,6 +1,6 @@
 package com.semi.c1;
 
-public class Coffee {
+public class Coffee2 {
 
 	private int c_no;
 	private String c_title;
@@ -8,7 +8,7 @@ public class Coffee {
 	private String c_img;
 	private String c_explain;
 	
-	public Coffee() {
+	public Coffee2() {
 	}
 
 	public int getC_no() {
@@ -51,7 +51,7 @@ public class Coffee {
 		this.c_explain = c_explain;
 	}
 
-	public Coffee(int c_no, String c_title, String c_price, String c_img, String c_explain) {
+	public Coffee2(int c_no, String c_title, String c_price, String c_img, String c_explain) {
 		super();
 		this.c_no = c_no;
 		this.c_title = c_title;

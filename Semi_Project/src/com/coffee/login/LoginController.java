@@ -20,7 +20,7 @@ public class LoginController extends HttpServlet {
 		
 			LoginDAO.login(request);
 			
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("jsp/login_hs.jsp").forward(request, response);
 	
 		
 		
