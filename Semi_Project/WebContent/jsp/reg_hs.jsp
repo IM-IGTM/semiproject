@@ -5,9 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="checkList_login.js"></script>
+<script type="text/javascript" src="validCheck.js"></script>
+
+
 </head>
 <body>
-<form action="RegController" method="post">
+<form action="RegController" method="post"  name="myForm" onsubmit="return check();">
 <table border="1" id="regTbl" width="400px" height="600px">
 <tr>
 <td class="reg_td">아이디</td>
