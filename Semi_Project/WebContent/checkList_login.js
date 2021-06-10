@@ -1,15 +1,15 @@
 function check(){
 	
-	let aInput = document.myForm.a;
+	let regPWInput = document.myForm.regPW;
+	let regPW2Input = document.myForm.regPW2;
 
 
-	if (isNotNumber(aInput)) {
-		alert('숫자만 입력하세요');
 
-		aInput.value = "";
-		aInput.focus();
+	if (notEquals(regPWInput, regPW2Input)) {
+		alert('비밀번호를 다시 확인하세요');
 
-		return false;
+
+	 return regPWInput.value != regPWInput2.value;
 	}	
 
 	
